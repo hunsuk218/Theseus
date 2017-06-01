@@ -79,7 +79,7 @@ public class algo4 {
 		}
 		else
 		{
-			point.offer(n);
+			point.addLast(n);
 			if(p.goal()){	//Player가 목적지에 도착하면 check를 false로 두어 재귀함수를 벗어나게 함
 				System.out.println("목표에 도착했어요!");
 				check = false;
