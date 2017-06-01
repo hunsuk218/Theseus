@@ -1,3 +1,4 @@
+package algo4;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,6 +23,5 @@ public class Main {
 		
 		System.out.println("경로 출력");
 		algo.print();
-	}
-	
+	}	
 }

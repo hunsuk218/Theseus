@@ -1,4 +1,4 @@
-
+package algo4;
 public class Map {
 	/*
 	 * Map class

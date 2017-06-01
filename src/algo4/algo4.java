@@ -1,3 +1,4 @@
+package algo4;
 import java.util.*;
 
 public class algo4 {

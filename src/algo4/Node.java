@@ -1,4 +1,4 @@
-
+package algo4;
 public class Node {
 	/*
 	 * 리스트에 넣는 Node
