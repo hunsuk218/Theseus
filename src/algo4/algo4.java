@@ -126,7 +126,17 @@ public class algo4 {
 					path.offer("아래로 이동");
 					run();
 				}
-				if(check){
+				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
+				if(check)
+				{
+					System.out.println("Do Nothing");
+					c.run(p);
+					c.run(p);
+					path.offer("대기");
+					run();
+				}
+				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
+				if(check && !path.isEmpty()){
 				System.out.println("갈곳이 없어요!");
 				path.removeLast();
 				}
