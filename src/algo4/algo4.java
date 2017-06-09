@@ -46,9 +46,8 @@ public class algo4 {
 		
 		int size = path.size();
 		while(!path.isEmpty()){			
-			System.out.println(path.removeFirst());
+			System.out.print(path.removeFirst());
 		}
-		System.out.println("총 " + size + "만큼 이동을 했습니다");
 	}
 
 	public void run()
@@ -59,7 +58,6 @@ public class algo4 {
 		 * 갈 수 있으면 이동 --> 만일 이미 갔던 위치거나 com에 의해 player가 잡히면 해당 경로를 삭제
 		 * 아무곳도 갈 수 없으면 그 노드도 삭제
 		 */
-		System.out.println("Player : " + p.x +" , " + p.y + "  Computer : " + c.x + " , " + c.y);
 	
 		int px, py, cx, cy;
 		px = p.getX();
@@ -73,7 +71,6 @@ public class algo4 {
 		Node n = new Node(p,c);
 		if(containNode(n) || c.catchPlayer(p))	//이미 간 위치거나, 잡히면 노드 삭제
 		{ 
-			System.out.println("Node del");
 			path.removeLast();
 			return;
 		}
@@ -81,7 +78,6 @@ public class algo4 {
 		{
 			point.addLast(n);
 			if(p.goal()){	//Player가 목적지에 도착하면 check를 false로 두어 재귀함수를 벗어나게 함
-				System.out.println("목표에 도착했어요!");
 				check = false;
 				return;
 			}
@@ -89,45 +85,49 @@ public class algo4 {
 			{
 				if(p.canGo(1) && check)	//왼쪽으로 갈 수 있으면 이동하고, 컴퓨터가 2턴 실행하고, 이동한 경로를 LinkedList path에 저장
 				{
-					System.out.println("Player go left");
 					p.go(1);
 					c.run(p);
 					c.run(p);
-					path.offer("왼쪽으로 이동");
+					path.offer("L ");
 					run();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);	//해당 경로 삭제를 대비하여 이전의 정보로 다시 초기화
 				if(p.canGo(2) && check)
 				{
-					System.out.println("Player go Right");
 					p.go(2);
 					c.run(p);
 					c.run(p);
-					path.offer("오른쪽으로 이동");
+					path.offer("R ");
 					run();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
 				if(p.canGo(4) && check)
 				{
-					System.out.println("Player go Up");
 					p.go(4);
 					c.run(p);
 					c.run(p);
-					path.offer("위로 이동");
+					path.offer("U ");
 					run();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
 				if(p.canGo(8) && check)
 				{
-					System.out.println("Player go down");
 					p.go(8);
 					c.run(p);
 					c.run(p);
-					path.offer("아래로 이동");
+					path.offer("D ");
 					run();
 				}
-				if(check){
-				System.out.println("갈곳이 없어요!");
+				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
+				if(check)
+				{
+					c.run(p);
+					c.run(p);
+					path.offer("N ");
+					run();
+				}
+				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
+				if(check && !path.isEmpty()){
 				path.removeLast();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);

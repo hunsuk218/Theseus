@@ -1,15 +1,13 @@
 package algo4;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Main {
 	/*
 	 * Main Class
 	*/
 	
+	@SuppressWarnings("resource")
 	public static void main(String args[]) throws IOException
 	{	
 		Scanner scan = new Scanner(System.in);

@@ -19,27 +19,19 @@ public class Com extends User{
 		
 		if(canGo(1) && (distance > distance(p,1)))
 		{ 
-			System.out.println("Computer Left");
 			go(1);
 		}
 		else if(canGo(2) && (distance > distance(p,2)))
 		{
-			System.out.println("Computer Right");
 			go(2);
 		}
 		else if(canGo(4) && (distance > distance(p,4)))
 		{
-			System.out.println("Computer Up");
 			go(4);
 		}
 		else if(canGo(8) && (distance > distance(p,8)))
-		{
-			System.out.println("Computer Down");	   
+		{   
 			go(8);
-		}
-		else
-		{
-			System.out.println("Computer Nothings");
 		}
 	}
 
@@ -49,7 +41,6 @@ public class Com extends User{
 		 * Com가 Player를 잡으면 true, 아니면 false 반환
 		 */
 		if(p.getX() == this.x && p.getY() == this.y){
-			System.out.println("Catch Player!!");
 			return true;
 		}
 		else
@@ -65,7 +56,6 @@ public class Com extends User{
 
 	public int distance(Player p,int x,int y)
 	{
-		//
 		int distance = Math.abs(x-p.getX()) + Math.abs(y-p.getY());
 
 		return distance;

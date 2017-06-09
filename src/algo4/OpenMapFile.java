@@ -30,7 +30,6 @@ public class OpenMapFile {
 		int[][] num = new int[arrSize1][arrSize2];
 		int count = 0;
 		
-		System.out.println("초기 파일 상태:");
 		
 		while(true)
 		{
@@ -42,27 +41,17 @@ public class OpenMapFile {
 			for(int i=0;i<arrSize2;i++)
 			{
 				num[count][i] = Integer.parseInt(tokens.nextToken("\t"));
-				System.out.println(num[count][i]);
 			}
 			count++;
 		}
 		in.close();
 
-		for(int i=0;i<arrSize1;i++)
-		{
-			for(int j=0;j<arrSize2;j++)
-			{
-				System.out.print(num[i][j] + "\t");
-			}
-			System.out.println();
-		}
 		
 		Map map = new Map(num,goalX,goalY);
 		Player p = new Player(pX,pY,map);
 		Com c = new Com(cX,cY,map);
 		algo4 algo = new algo4(p,c);
-		map.printMap();
-		System.out.println( arrSize1 + " " + arrSize2  + " " + goalX  + " " + goalY  + " " + pX  + " " + pY  + " " + cX  + " " + cY);
+		//map.printMap();
 		return algo;
 	}
 }	
