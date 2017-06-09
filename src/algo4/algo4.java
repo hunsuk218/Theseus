@@ -121,24 +121,13 @@ public class algo4 {
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
 				if(check)
 				{
-<<<<<<< HEAD
 					c.run(p);
 					c.run(p);
 					path.offer("N ");
-=======
-					System.out.println("Do Nothing");
-					c.run(p);
-					c.run(p);
-					path.offer("대기");
->>>>>>> 5c230c3a8637127f554614846707a639e429ccac
 					run();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
 				if(check && !path.isEmpty()){
-<<<<<<< HEAD
-=======
-				System.out.println("갈곳이 없어요!");
->>>>>>> 5c230c3a8637127f554614846707a639e429ccac
 				path.removeLast();
 				}
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
