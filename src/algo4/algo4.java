@@ -45,7 +45,7 @@ public class algo4 {
 		 */
 		
 		int size = path.size();
-		while(!path.isEmpty()){			
+		while(!path.isEmpty()){
 			System.out.print(path.removeFirst());
 		}
 	}
@@ -133,5 +133,9 @@ public class algo4 {
 				p.setX(px); p.setY(py); c.setX(cx); c.setY(cy);
 			}
 		}
+	}
+	
+	public void Test(){
+		System.out.println("github Test");
 	}
 }
