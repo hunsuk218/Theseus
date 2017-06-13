@@ -134,8 +134,4 @@ public class algo4 {
 			}
 		}
 	}
-	
-	public void Test(){
-		System.out.println("github Test");
-	}
 }
